@@ -1,36 +1,35 @@
-# IMPULS Dotacje Marta 4.2.3 — kandydat do odbioru (RC)
+# IMPULS Dotacje Marta — wydanie testowe RC5
 
-Instalator Windows 64-bit. Pobierz **IMPULS-Dotacje-Marta-4.2.3-Setup.exe** z plików wydania (Assets). Nie pobieraj „Source code” — to archiwum tego repozytorium dystrybucyjnego, nie instalator.
+**To kandydat do testów, nie potwierdzony produkt gotowy do obsługi każdej sprawy. LIVE AI pozostaje BLOCKED — potrzebne jest własne logowanie.** Testy z przygotowanymi odpowiedziami nie dowodzą jakości modelu.
 
-## Pierwsze uruchomienie
+- [Pobierz instalator Windows 5.0.0-rc.5](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.5/IMPULS-Dotacje-Marta-5.0.0-rc.5-Setup.exe)
+- [Instrukcja Marty — PDF](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.5/MARTA-Instrukcja-RC5.pdf)
+- [Wydanie, raport i dowody testów](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/tag/test-v5.0.0-rc.5)
 
-1. Pobierz EXE i przeczytaj CZYTAJ-NAJPIERW.txt.
-2. Przed aktualizacją zachowaj kopię całego folderu danych przy zamkniętej aplikacji. Kopia JSON bazy nie zawiera wszystkich plików, rozmów i zadań.
-3. Uruchom instalator, a następnie Impuls Dotacje Marta. Nie potrzebujesz Node.js ani terminala.
-4. Wybierz klienta i sprawę, dodaj dokumenty, sprawdź ich role oraz źródła.
-5. Korzystaj z widoków eksperckich i Pomocy AI. Pełny agent chmurowy wymaga konfiguracji administratora w „Ustawienia i kopie”: własny klucz API, dostępny model, zgoda i budżet. Klucza nie ma w instalatorze.
-6. Sprawdź „Potrzebuję od Ciebie”, zapisane wyniki i „Sprawdź przed złożeniem”. Pakiet częściowy nie jest gotowy do złożenia.
+Nie pobieraj „Source code” jako instalatora — to archiwum repozytorium dystrybucyjnego. Wydanie RC5 jest celowo pomijane przez updater RC4/RC5; dostępne wyłącznie z ręcznego linku. Nie jest rozsyłane do kanału stabilnego.
 
-Do otwierania DOCX/XLSX potrzebny jest osobny zgodny program biurowy.
+## Początek pracy
 
-## Uczciwy status
+1. Przed aktualizacją wykonaj pełną zaszyfrowaną kopię w programie. Kopia samego JSON nie zawiera wszystkich załączników.
+2. Zainstaluj EXE i otwórz Marta AI. Zachowano tożsamość aplikacji oraz katalog danych.
+3. W „Silnik i zgody” wybierz Codex i własne konto ChatGPT albo własne API. Oficjalny Codex CLI wymaga osobnej instalacji według instrukcji; nie korzystaj z cudzego konta.
+4. Pobierz katalog modeli, zapisz wybór i zgodę, wykonaj test odpowiedzi i procedury. Katalog nie jest testem połączenia.
+5. Wybierz sprawę i nabór, dodaj dokumenty, sprawdź ich role i źródła. Rozmawiaj w głównym czacie i kontroluj zapisane wyniki.
 
-- Instalator: BUILT; integralność i zgodność zapakowanego kodu sprawdzone.
-- Pełne regresje offline, read-back DOCX/XLSX, migracja/restart oraz testy spakowanej aplikacji Linux: PASS.
-- Natywna instalacja/aktualizacja/uruchomienie na Windows: NOT RUN.
-- Rzeczywisty model API: BLOCKED na brak autoryzacji/klucza/budżetu; testy kontrolowane nie stanowią LIVE PASS.
-- Odbiór Marty/właściciela: NOT RUN.
-- Pakiet nie ma podpisu cyfrowego. Nie omijaj ostrzeżeń systemowych; administrator powinien zweryfikować pochodzenie i sumę pliku.
-- To RC, nie potwierdzone wydanie finalne. Zalecany pierwszy odbiór na odrębnym profilu i syntetycznych dokumentach.
+API jest płatne osobno i wymaga limitu. ChatGPT podlega limitom własnego konta; program nie przełączy się automatycznie na płatne API. Nieznane zużycie nie jest przedstawiane jako zero. W instalatorze nie ma konta ani klucza. Roboczy dokument i zakończone zadanie nie oznaczają gotowości do złożenia.
 
-Obsługiwane nabory i analizy mają określony zakres. Nie ma pełnego OCR, wszystkich kalkulatorów Studium ani automatycznego podpisu, złożenia lub wysyłki. Samo NPV nie oznacza kompletnego Studium.
+## Potwierdzone i niepotwierdzone
 
-## Integralność
+- Pełna regresja offline, dodatkowe 64 testy, spakowana aplikacja i dokumenty: PASS w określonych scenariuszach kontrolowanych.
+- Windows Server 2025 build 26100: PASS — instalacja, aktualizacja RC4, restart, ConPTY, OCR, DOCX/XLSX i dwie syntetyczne sprawy. Nie jest to test komputera Marty ani wszystkich Windows 10/11.
+- Prawdziwy model w głównym czacie: BLOCKED. Rzeczywista sprawa klienta: UNVERIFIED.
+- `Get-AuthenticodeSignature`: **NotSigned**. Brak zaufanego podpisu wydawcy; sprawdź źródło i hash pliku. Nie traktuj komunikatu buildu „signing” jako podpisu.
+- npm audit: 0 produkcyjnych, 8 high w narzędziach budowania; zakres opisano w raporcie.
 
-Wersja: 4.2.3
-Zweryfikowany commit kodu aplikacji: d5bfe62f9c1100dddc1d9305674b56d491da4429
-Rozmiar EXE: 502171720 bajtów
-SHA-256 EXE: e7d75c548cdb97be09dec3e2db42766fcd7fae1980809e00b65bd60a73660552
-SHA-256 app.asar: 136acc4597e08f3832c3796c0517f88d200450757b4742ed234dbc215b3851fd
+## Integralność instalatora
 
-To osobne repozytorium dystrybucyjne. Jego tag i archiwum „Source code” obejmują jedynie dokumentację dystrybucji, nie kod aplikacji. Publikacja instalatora nie zmienia widoczności repozytorium źródłowego ani nie zawiera baz klientów lub wspólnego klucza API.
+Wersja: 5.0.0-rc.5. Źródłowy commit produktu: `d1a63140f00a4b620a157066ebabcdab75ade03b`.
+Rozmiar: 242566996 bajtów.
+SHA-256: `0ab328c0d9ec5a4032b4368c9cdba9dd33904fe2649c16ba20ad3bf224c7ae82`.
+
+Publikowane dowody zawierają wyłącznie fikcyjne dane. Repozytorium nie zawiera rzeczywistych dokumentów klientów, prywatnych kopii danych ani poświadczeń.

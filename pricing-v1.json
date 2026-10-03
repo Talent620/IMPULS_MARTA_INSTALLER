@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "revision": 2026100301,
+  "entries": [
+    {
+      "id": "gpt-6.1-sol",
+      "source": "https://developers.openai.com/api/docs/pricing",
+      "verifiedAt": "2026-10-03",
+      "maxAgeDays": 30,
+      "input": 2000,
+      "cached": 100,
+      "cacheWrite": 2500,
+      "output": 10000
+    },
+    {
+      "id": "gpt-6-luna",
+      "source": "https://developers.openai.com/api/docs/pricing",
+      "verifiedAt": "2026-10-03",
+      "maxAgeDays": 30,
+      "input": 100,
+      "cached": 10,
+      "cacheWrite": 125,
+      "output": 500
+    }
+  ]
+}

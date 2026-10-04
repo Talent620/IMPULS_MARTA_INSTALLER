@@ -1,35 +1,39 @@
-# IMPULS Dotacje Marta — wydanie testowe RC6
+# IMPULS Dotacje Marta — wersja testowa RC7
 
-**To kandydat do testów, nie potwierdzony produkt gotowy do obsługi każdej sprawy. LIVE AI pozostaje BLOCKED — potrzebne jest własne logowanie.** Testy z przygotowanymi odpowiedziami nie dowodzą jakości modelu.
+Nowy sposób pracy: **pliki → przygotowanie sprawy w czacie → decyzje → dokumenty do kontroli**.
 
-- [Pobierz instalator Windows 5.0.0-rc.6](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.6/IMPULS-Dotacje-Marta-5.0.0-rc.6-Setup.exe)
-- [Instrukcja Marty — PDF](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.6/MARTA-Instrukcja-RC6.pdf)
-- [Wydanie, raport i dowody testów](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/tag/test-v5.0.0-rc.6)
+**LIVE AI pozostaje niepotwierdzone.** Kontrolowane odpowiedzi w testach nie są dowodem jakości prawdziwego modelu. Własne konto, model i zgoda wymagają konfiguracji.
 
-Nie pobieraj „Source code” jako instalatora — to archiwum repozytorium dystrybucyjnego. Wydanie RC6 jest celowo pomijane przez updater RC4/RC6; dostępne wyłącznie z ręcznego linku. Nie jest rozsyłane do kanału stabilnego.
+- [Instalator Windows RC7](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.7/IMPULS-Dotacje-Marta-5.0.0-rc.7-Setup.exe)
+- [Instrukcja dla Marty — PDF](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.7/MARTA-Instrukcja-RC7.pdf)
+- [Raport i dowody testów przy wydaniu](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/tag/test-v5.0.0-rc.7)
 
-## Początek pracy
+## Jak zacząć
 
-1. Przed aktualizacją wykonaj pełną zaszyfrowaną kopię w programie. Kopia samego JSON nie zawiera wszystkich załączników.
-2. Zainstaluj EXE i otwórz Marta AI. Zachowano tożsamość aplikacji oraz katalog danych.
-3. W „Silnik i zgody” wybierz Codex i własne konto ChatGPT albo własne API. Oficjalny Codex CLI wymaga osobnej instalacji według instrukcji; nie korzystaj z cudzego konta.
-4. Pobierz katalog modeli, zapisz wybór i zgodę, wykonaj test odpowiedzi i procedury. Katalog nie jest testem połączenia.
-5. Wybierz sprawę i nabór, dodaj dokumenty, sprawdź ich role i źródła. Rozmawiaj w głównym czacie i kontroluj zapisane wyniki.
+1. Przed aktualizacją wykonaj pełną zaszyfrowaną kopię w aplikacji.
+2. Zainstaluj EXE i otwórz **MARTA AI**.
+3. Wybierz sprawę albo **Rozpocznij z plików**. Sam import nie wywołuje AI.
+4. W **Ustawieniach AI** wybierz Codex, własny sposób dostępu, model i autonomię. Oficjalny Codex CLI wymaga osobnej instalacji. Wykonaj test odpowiedzi i procedury.
+5. Dodaj materiały, sprawdź ich role i kliknij **Przygotuj całą sprawę**. Możesz wcześniej dopisać wskazówki w polu rozmowy.
+6. Odpowiadaj na rzeczywiste braki, zatwierdzaj ważne decyzje i sprawdzaj zapisane wyniki.
 
-API jest płatne osobno i wymaga limitu. ChatGPT podlega limitom własnego konta; program nie przełączy się automatycznie na płatne API. Nieznane zużycie nie jest przedstawiane jako zero. W instalatorze nie ma konta ani klucza. Roboczy dokument i zakończone zadanie nie oznaczają gotowości do złożenia.
+Program korzysta z jednej bazy i rozmowy. Nie podpisuje ani nie wysyła wniosku. Zapisany plik nie oznacza zatwierdzenia. API jest płatne osobno, ChatGPT podlega limitom własnego konta; nie ma automatycznego przejścia na płatne API.
 
-## Potwierdzone i niepotwierdzone
+## Zakres potwierdzenia
 
-- Pełna regresja offline, dodatkowe 65 testów, spakowana aplikacja i dokumenty: PASS w określonych scenariuszach kontrolowanych.
-- Windows Server 2025 build 26100: PASS — instalacja, aktualizacja RC4, restart, ConPTY, OCR, DOCX/XLSX i dwie syntetyczne sprawy. Nie jest to test komputera Marty ani wszystkich Windows 10/11.
-- Prawdziwy model w głównym czacie: BLOCKED. Rzeczywista sprawa klienta: UNVERIFIED.
-- `Get-AuthenticodeSignature`: **NotSigned**. Brak zaufanego podpisu wydawcy; sprawdź źródło i hash pliku. Nie traktuj komunikatu buildu „signing” jako podpisu.
-- npm audit: 0 produkcyjnych, 8 high w narzędziach budowania; zakres opisano w raporcie.
+- Kontrolowane testy i nowy przycisk w spakowanym głównym czacie Linux/Windows: PASS.
+- Dodatkowe testy integracji Codex: 65 PASS, 0 FAIL, 0 SKIP.
+- Windows Server 2025 Datacenter, build 26100: instalacja, aktualizacja RC4 z zachowaniem danych, OCR, dokumenty, restart, aktualizator i dwie fikcyjne sprawy: PASS.
+- Komputer Marty, jej rzeczywista sprawa i odpowiedź żywego modelu: UNVERIFIED.
+- Instalator: **NotSigned** — brak zaufanego podpisu wydawcy.
+- npm audit: 0 produkcyjnych, 1 high w narzędziach budowania; szczegóły i dostępna poprawka opisane w raporcie.
 
-## Integralność instalatora
+To ręczne wydanie testowe, nie aktualizacja kanału stabilnego. Nie pobieraj „Source code” jako programu.
 
-Wersja: 5.0.0-rc.6. Źródłowy commit produktu: `8672ecc44b601266e7ecb068a2b93823a81baff6`.
-Rozmiar: 242567180 bajtów.
-SHA-256: `bb1608bdc1614b771ada606bf714d5aae91355a8b9c73cac0439605f55ea62e9`.
+## Integralność
 
-Publikowane dowody zawierają wyłącznie fikcyjne dane. Repozytorium nie zawiera rzeczywistych dokumentów klientów, prywatnych kopii danych ani poświadczeń.
+Wersja: `5.0.0-rc.7`. Kod: `4823c6e4d4841157a866fd54d1dc379ae105925a`.
+Rozmiar: `242569914` bajtów.
+SHA-256: `b2f10c5b126d58daf05e13aafcbd7659c96b7cedd740c778a501980f7414d4db`.
+
+Opublikowane materiały testowe zawierają wyłącznie fikcyjne dane. Instalator nie zawiera konta, kluczy ani rzeczywistych dokumentów klientów.

@@ -1,39 +1,38 @@
-# IMPULS Dotacje Marta — wersja testowa RC7
+# IMPULS Dotacje Marta — wersja testowa RC8
 
-Nowy sposób pracy: **pliki → przygotowanie sprawy w czacie → decyzje → dokumenty do kontroli**.
+**Dokumenty → przygotowanie wniosku → wspólny przegląd → pliki do kontroli.**
+Status misji: **PARTIAL**. Pełny przebieg na prawdziwym modelu pozostaje **LIVE BLOCKED**.
+Kontrolowane odpowiedzi testowe nie dowodzą autonomicznego wypełniania oficjalnego wniosku.
 
-**LIVE AI pozostaje niepotwierdzone.** Kontrolowane odpowiedzi w testach nie są dowodem jakości prawdziwego modelu. Własne konto, model i zgoda wymagają konfiguracji.
-
-- [Instalator Windows RC7](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.7/IMPULS-Dotacje-Marta-5.0.0-rc.7-Setup.exe)
-- [Instrukcja dla Marty — PDF](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.7/MARTA-Instrukcja-RC7.pdf)
-- [Raport i dowody testów przy wydaniu](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/tag/test-v5.0.0-rc.7)
+- [Instalator Windows RC8](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.8/IMPULS-Dotacje-Marta-5.0.0-rc.8-Setup.exe)
+- [Instrukcja dla Marty — PDF](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/download/test-v5.0.0-rc.8/MARTA-Instrukcja-RC8.pdf)
+- [Raport i dowody testów](https://github.com/Talent620/IMPULS_MARTA_INSTALLER/releases/tag/test-v5.0.0-rc.8)
 
 ## Jak zacząć
 
 1. Przed aktualizacją wykonaj pełną zaszyfrowaną kopię w aplikacji.
 2. Zainstaluj EXE i otwórz **MARTA AI**.
-3. Wybierz sprawę albo **Rozpocznij z plików**. Sam import nie wywołuje AI.
-4. W **Ustawieniach AI** wybierz Codex, własny sposób dostępu, model i autonomię. Oficjalny Codex CLI wymaga osobnej instalacji. Wykonaj test odpowiedzi i procedury.
-5. Dodaj materiały, sprawdź ich role i kliknij **Przygotuj całą sprawę**. Możesz wcześniej dopisać wskazówki w polu rozmowy.
-6. Odpowiadaj na rzeczywiste braki, zatwierdzaj ważne decyzje i sprawdzaj zapisane wyniki.
+3. W **Ustawieniach AI** wybierz własny sposób dostępu, model i autonomię. Oficjalny Codex CLI wymaga osobnej instalacji. Kliknij **Zapisz i sprawdź połączenie**.
+4. Dodaj dokumenty lub folder. Program odczyta materiały nawet bez wybranego naboru i wzoru.
+5. Kliknij **Przygotuj wniosek**. W **Przejrzyj propozycje** sprawdź źródła, pola i załączniki. Po decyzjach ponów przygotowanie.
+6. Otwórz aktualne wyniki. Braki, nieobsługiwane pola i niepotwierdzone kwoty nie oznaczają gotowego wniosku.
 
-Program korzysta z jednej bazy i rozmowy. Nie podpisuje ani nie wysyła wniosku. Zapisany plik nie oznacza zatwierdzenia. API jest płatne osobno, ChatGPT podlega limitom własnego konta; nie ma automatycznego przejścia na płatne API.
+Program nie podpisuje ani nie wysyła wniosku. API jest płatne osobno, ChatGPT podlega limitom własnego konta; nie ma automatycznego przejścia na płatne API.
 
 ## Zakres potwierdzenia
 
-- Kontrolowane testy i nowy przycisk w spakowanym głównym czacie Linux/Windows: PASS.
-- Dodatkowe testy integracji Codex: 65 PASS, 0 FAIL, 0 SKIP.
-- Windows Server 2025 Datacenter, build 26100: instalacja, aktualizacja RC4 z zachowaniem danych, OCR, dokumenty, restart, aktualizator i dwie fikcyjne sprawy: PASS.
-- Komputer Marty, jej rzeczywista sprawa i odpowiedź żywego modelu: UNVERIFIED.
-- Instalator: **NotSigned** — brak zaufanego podpisu wydawcy.
-- npm audit: 0 produkcyjnych, 1 high w narzędziach budowania; szczegóły i dostępna poprawka opisane w raporcie.
+- Pełna regresja i nowe kontrolowane testy: PASS. Spakowany główny chat Linux/Windows z kontrolowanym providerem: PASS.
+- Windows Server 2025 Datacenter 10.0.26100: instalacja, aktualizacja z RC7 z zachowaniem danych, OCR, dokumenty, restart, aktualizator i dwie fikcyjne sprawy: PASS.
+- Pobrano 28 dokumentów rzeczywistego historycznego naboru z oficjalnego źródła; to test pobierania, nie kwalifikowalności ani kompletności dokumentacji.
+- LIVE AI: BLOCKED. Komputer Marty i rzeczywista sprawa: UNVERIFIED.
+- Złożone kontrolki, wzory PDF i portale bez właściwego adaptera pozostają ograniczeniem. Szkic roboczy nie jest oficjalnym wnioskiem.
+- Instalator: **NotSigned**, brak zaufanego podpisu wydawcy.
+- npm audit: 3 moderate produkcyjne, 10 moderate łącznie, 0 high/critical; dokładny zakres w raporcie.
 
 To ręczne wydanie testowe, nie aktualizacja kanału stabilnego. Nie pobieraj „Source code” jako programu.
 
-## Integralność
-
-Wersja: `5.0.0-rc.7`. Kod: `4823c6e4d4841157a866fd54d1dc379ae105925a`.
-Rozmiar: `242569914` bajtów.
-SHA-256: `b2f10c5b126d58daf05e13aafcbd7659c96b7cedd740c778a501980f7414d4db`.
+Wersja: `5.0.0-rc.8`. Kod: `4f446d05cff8e6105f8805d5fe4ea21ea58b9587`.
+Rozmiar: `242575089` bajtów.
+SHA-256: `7ac541a1b968b7243b6bdb0fafcb955ea881358988985d90fecf74ddb885fca2`.
 
 Opublikowane materiały testowe zawierają wyłącznie fikcyjne dane. Instalator nie zawiera konta, kluczy ani rzeczywistych dokumentów klientów.
